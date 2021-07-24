@@ -5,6 +5,7 @@
         <link rel="stylesheet" href="style.css">
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="https://api.jikan.moe/v3"></script>
     </head>
     <body>
         <div class="wrapper">
@@ -13,22 +14,51 @@
                 <img src="https://home-guest.rappi.com/img/rappi.svg" alt="Logo Rappi" class="logo_rappi">
             </div>
             <ul>
-                <li><a href="#">Entrar</a></li>
-                <li><a href="#" class="green_button">Inscreve-se</a></li>
+                <li><button class="entrar_button">Entrar</button>
+                    <div class="dialog1">
+                    <div>
+                        <ul class="dialogList">
+                            <li>Login <input type="text" id="login_input"></li>
+                            <li>Senha <input type="password" id="senha_input"></li>
+                        </ul>
+                        <div>
+                            <button id="login_button">Entrar</button>
+                        </div>
+                    </div>
+                    <span id="error"></span>
+                </div>
+                </li>
+                <li>
+                    <button class="cadastro_button">Inscreve-se</button>
+                    <div>
+                        <div  class="dialog2">
+                            <ul class="dialogList">
+                                <li>Login<input type="text"></li>
+                                <li>Senha<input type="password"></li>
+                                <li>Primeiro nome<input type="primeironome"></li>
+                                <li>Ultimo nome<input type="ultimonome"></li>
+                            </ul>
+                            <div class= "buttonDialog">
+                                <button>cadastrar usuário</button>
+                            </div>
+                        </div>
+                    </div>
+                </li>
             </ul>
         </nav>
         <header class="header">
-            <div class="header_texto"><b>Peça supermercados, restaurantes e muito mais</b></div>
+            <div class="header_texto"><b>Procure o seu anime aqui em baixo!!!</b></div>
             <section class="mobile_display">
                 <div class="display_endereço">
                     <div  class="header_endereço">
                         <img src="https://images.rappi.com/cms-web/images/location_7e8bd52991_e9f2192a11.svg" alt="local">
-                        <input type="text" placeholder="Escreva seu endereço" class="header_endereço_box">
+                        <input id="anime_input" type="text" placeholder="Digite o nome do anime" class="header_endereço_box">
                     </div>
                 </div>
                     <div class="buscar">
-                        <a href="" class="buscas_content">Buscar</a>
+                        <button id="pesquisar_anime" class="buscas_content">Buscar</button>
                 </div>
+                <ul id="lista_de_anime" class="listaAnime"></ul>
             </section>
         </header>
         <section class="hashtags">
@@ -118,5 +148,10 @@
         </section>
     </div>
 </div>
+<div>
+</div>
     </body>
+    <script src="index.js"></script>
+    <script src="https://reqres.in/api/"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 </html>

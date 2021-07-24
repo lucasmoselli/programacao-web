@@ -55,6 +55,10 @@
     
 }
 
+.header.show {
+    display: block;
+}
+
 .header_texto {
     font-size: 32px;
     margin-bottom: 25px;
@@ -87,16 +91,15 @@
 
 .buscar {
     display: inline-block;
-    background-color:#0cc665;
-    border: #0cc665 17px solid;
-    border-radius: 25px;
-    padding-left: 20px;
-    padding-right: 20px;
     margin-left: 30px;
-    opacity: .6;
 }
 
 .buscas_content {
+    background-color: #0cc665;
+    opacity: 0.6;
+    padding: 20px;
+    border-radius: 20px;
+    border-color: #0cc665;
     font-size: 18px;
     font-weight: bold;
     color:white;
@@ -253,6 +256,67 @@
 
 }
 
+/* projeto 2 */
+
+.dialog1 {
+    opacity: 0;
+    transform: scale(0) translateX(-100px);
+    transition: all linear 0.3s;
+}
+
+.dialog1.show {
+    opacity: 1;
+    transform: scale(1) translateX(0px);
+}
+
+.dialog2 {
+    display: none;
+}
+
+
+.entrar_button {
+    background-color: red;
+    color: white;
+    height: 30px;
+    margin: 10px;
+    padding: 0px 30px;
+    border-radius: 5px;
+    border-color: red;
+}
+
+.cadastro_button {
+    background-color: #0cc665;
+    color: white;
+    height: 30px;
+    margin: 10px;
+    padding: 0px 30px;
+    border-radius: 5px;
+    border-color: #0cc665;
+}
+
+.listaAnime {
+    display: flex;
+    width: 1920px;
+    flex: 1;
+    flex-wrap: wrap;
+    background-color: darkblue;
+    list-style: none;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.listaAnime li {
+    background-color: cyan;
+    margin: 10px;
+    border-radius: 10px;
+    font-size: 30px;
+}
+
+.listaAnime li img {
+    width: 225px;
+    height: 318px;
+    margin: 5px;
+}
 @media only screen and (max-width: 360px){
 
     .wrapper {
