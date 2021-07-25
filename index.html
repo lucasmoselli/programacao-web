@@ -5,7 +5,6 @@
         <link rel="stylesheet" href="style.css">
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <script src="https://api.jikan.moe/v3"></script>
     </head>
     <body>
         <div class="wrapper">
@@ -14,12 +13,12 @@
                 <img src="https://home-guest.rappi.com/img/rappi.svg" alt="Logo Rappi" class="logo_rappi">
             </div>
             <ul>
-                <li><button class="entrar_button">Entrar</button>
+                <li><button class="entrar-button">Entrar</button>
                     <div class="dialog1">
                     <div>
                         <ul class="dialogList">
-                            <li>Login <input type="text" id="login_input"></li>
-                            <li>Senha <input type="password" id="senha_input"></li>
+                            <li>Login <input type="text" id="login_input" placeholder="Digite seu login" value="eve.holt@reqres.in"></li>
+                            <li>Senha <input type="password" id="senha_input" placeholder="Digite sua senha"></li>
                         </ul>
                         <div>
                             <button id="login_button">Entrar</button>
@@ -29,7 +28,7 @@
                 </div>
                 </li>
                 <li>
-                    <button class="cadastro_button">Inscreve-se</button>
+                    <button class="cadastro-button">Inscreve-se</button>
                     <div>
                         <div  class="dialog2">
                             <ul class="dialogList">
@@ -46,7 +45,7 @@
                 </li>
             </ul>
         </nav>
-        <header class="header">
+        <header  class="header">
             <div class="header_texto"><b>Procure o seu anime aqui em baixo!!!</b></div>
             <section class="mobile_display">
                 <div class="display_endereço">
@@ -94,31 +93,31 @@
         </section>
         <section class="container">
                 <div class="box1">
-                    <img src="https://images.rappi.com/cms-web/images/RESTAURANTS_1888368213.jpeg" alt="">
+                    <img class="img1" src="https://images.rappi.com/cms-web/images/RESTAURANTS_1888368213.jpeg" alt="">
                     <a href="#" class="text-decoration">
                         <div class="restaurante_box">
                             <h1 class="container_font_format">
-                                Restaurantes
+                                <span class="img1-text">Restaurantes</span> 
                             </h1>
                         </div>
                     </a>
                 </div>
                 <div  class="box2">
-                    <img src="https://images.rappi.com/cms-web/images/MERCADOS6_24827fa8aa.jpeg" alt="">
+                    <img class="img2" src="https://images.rappi.com/cms-web/images/MERCADOS6_24827fa8aa.jpeg" alt="">
                     <a href="#" class="text-decoration">
                         <div class="supermercado_box">
                             <h1 class="container_font_format">
-                                Supermercados
+                                <span class="img2-text">Supermercados</span>
                             </h1>
                         </div>
                     </a>
                 </div>
                 <div  class="box3">
-                    <img src="https://images.rappi.com/cms-web/images/FARMA1_30be636348.jpeg" alt="">
+                    <img class="img3" src="https://images.rappi.com/cms-web/images/FARMA1_30be636348.jpeg" alt="">
                     <a href="#" class="text-decoration">
                         <div class="farmacia_box">
                             <h1 class="container_font_format">
-                                Farmacia
+                                <span class="img3-text">Farmacia</span>    
                             </h1>
                         </div>
                     </a>
@@ -130,19 +129,19 @@
                     <div class="rappi_qualidade_format">
                         <img src="https://images.rappi.com/cms-web/images/location_7e8bd52991_e9f2192a11.svg" alt="amor" class="background-white">
                     </div>
-                    <p>Receba suas compras em casa em menos de uma hora</p>
+                    <p class="rappi-qualidades1-text">Receba suas compras em casa em menos de uma hora</p>
                 </div>
                 <div class="rappi_qualidades2">
                     <div  class="rappi_qualidade_format">
                         <img src="https://images.rappi.com/cms-web/images/icons_duotone_wallet_cb59b6bff2_6a79b22d71.svg" alt="amor" class="background-white">
                     </div>
-                    <p>Um shopper seleciona seus produtos com amor</p>
+                    <p class="rappi-qualidades2-text">Um shopper seleciona seus produtos com amor</p>
                 </div>
                 <div class="rappi_qualidades3">
                     <div  class="rappi_qualidade_format">
                         <img src="https://images.rappi.com/cms-web/images/icons_duotone_check_protection_53f31c692a_2f0ee862f3.svg" alt="segurança"  class="background-white">
                     </div>
-                    <p>Caso o seu produto chegue em mal estado, vc não pagará por ele!</p>
+                    <p class="rappi-qualidades3-text">Caso o seu produto chegue em mal estado, vc não pagará por ele!</p>
                 </div>         
             </div>
         </section>
@@ -152,6 +151,5 @@
 </div>
     </body>
     <script src="index.js"></script>
-    <script src="https://reqres.in/api/"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 </html>

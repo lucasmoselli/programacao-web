@@ -66,6 +66,7 @@
 }
 .mobile_display {
     width: 100%;
+    margin-bottom: px;
 }
 
 .display_endereço {
@@ -78,7 +79,7 @@
     border: #f4f4f4 solid 17px;
     border-radius: 20px;
     padding-right: 20px;
-    margin-bottom: 30px;
+    
 }
 
 
@@ -104,6 +105,8 @@
     font-weight: bold;
     color:white;
     text-decoration: none;
+    border-style: none;
+
 }
 
 .hashtags {
@@ -262,19 +265,61 @@
     opacity: 0;
     transform: scale(0) translateX(-100px);
     transition: all linear 0.3s;
+    background-color: #ff7066;
+    border-radius: 10px;
+    width: 500px;
 }
 
 .dialog1.show {
+
     opacity: 1;
     transform: scale(1) translateX(0px);
+}
+
+.dialogList {
+    font-weight: bold;
+    display: inline;
 }
 
 .dialog2 {
     display: none;
 }
 
+#login_input {
+    height: 25px;
+    background-color: #d1d1d1;
+    border-color: #706967;
+    border-radius: 5px;
+    font-weight: 500;
+}
 
-.entrar_button {
+#senha_input {
+    height: 25px;
+    background-color: #d1d1d1;
+    border-color: #706967;
+    border-radius: 5px;
+    font-weight: 500;
+
+}
+
+#login_button {
+    width: 100px;
+    height: 30px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    margin-left: 190px;
+    background-color: #f4f4f4;
+    border-radius: 5px;
+
+}
+
+
+#error {
+    font-weight: bold;
+    margin-left: 50px;
+}
+
+.entrar-button {
     background-color: red;
     color: white;
     height: 30px;
@@ -284,7 +329,11 @@
     border-color: red;
 }
 
-.cadastro_button {
+.entrar-button.show {
+    opacity: 0;
+}
+
+.cadastro-button {
     background-color: #0cc665;
     color: white;
     height: 30px;
@@ -292,8 +341,13 @@
     padding: 0px 30px;
     border-radius: 5px;
     border-color: #0cc665;
+
 }
 
+.cadastro-button.show {
+    display: none;
+
+}
 .listaAnime {
     display: flex;
     width: 1920px;
@@ -303,19 +357,41 @@
     list-style: none;
     margin-top: 30px;
     margin-bottom: 30px;
+    justify-items: center;
 }
 
 .listaAnime li {
-    background-color: cyan;
+    background-color: rgb(113, 252, 252);
     margin: 10px;
     border-radius: 10px;
     font-size: 30px;
+    margin-left: 30px;
 }
 
 .listaAnime li img {
     width: 225px;
     height: 318px;
     margin: 5px;
+}
+
+.listaAnime li div {
+    max-width: 400px;
+    width: 400px;
+    font-weight: bold;
+}
+.img1 {
+    height: 373px;
+    width: 480px;
+}
+
+.img2 {
+    height: 373px;
+    width: 480px;
+}
+
+.img3 {
+    height: 373px;
+    width: 480px;
 }
 @media only screen and (max-width: 360px){
 
