@@ -1,8 +1,11 @@
-var entrarButton = document.querySelector('.entrar-button');
-var cadastroButton = document.querySelector('.cadastro-button');
-var header = document.querySelector('.header');
-var button = document.querySelector('button');
-var dialog1 = document.querySelector('.dialog1');
+/* variaveis */
+var entrarButton = document.querySelector('.entrar-button')
+var cadastroButton = document.querySelector('.cadastro-button')
+var formAnime = document.querySelector('.addAnime')
+var header = document.querySelector('.header')
+var button = document.querySelector('button')
+var dialog1 = document.querySelector('.dialog1')
+var dialog2 = document.querySelector('.dialog2')
 var imagem1 = document.querySelector('.img1')
 var imagem2 = document.querySelector('.img2')
 var imagem3 = document.querySelector('.img3')
@@ -31,6 +34,28 @@ if (ifUsuarioLogado() === false) {
     })
 }
 
+/* caixinha de cadastro */
+if (ifUsuarioLogado() === false){
+    cadastroButton.addEventListener("click", function(){
+        if(dialog2.className === 'dialog2 show')
+            dialog2.className = 'dialog2'
+        else
+            dialog2.className = 'dialog2 show'
+    })  
+}
+
+/* Cadastro */
+
+document.getElementById('buttonCadastro').addEventListener('click', function () {
+    var login = document.getElementById('cadastro-login')
+        senha = document.getElementById('cadastro-senha')
+
+    error2.innerHTML = '';
+
+    if (login.value.length >= 3 && senha.value.length >= 3) {
+        axios.post('https://localhost:3000/registrar', {email: login.value, password: senha.value})
+    }
+})
 /*login */
 document.getElementById('login_button').addEventListener('click', function () {
     var login = document.getElementById('login_input'),
@@ -39,12 +64,14 @@ document.getElementById('login_button').addEventListener('click', function () {
     
     error.innerHTML = '';
     if (login.value.length >= 3 && senha.value.length >= 3) {
-        axios.post('https://reqres.in/api/login', {email: login.value, password: senha.value})
+        axios.post('https://localhost:3000/login', {email: login.value, password: senha.value})
             .then((Response) => {
             console.log(Response)
+            localStorage.setItem("Token", Response.data.token);
+            /*
             localStorage.setItem("Login", login.value);
             localStorage.setItem("Senha", senha);
-            localStorage.setItem("Token", Response.data.token);
+            */
             location.reload();
         }, (error) => {
             console.log(error);
@@ -71,6 +98,7 @@ document.getElementById('pesquisar_anime').addEventListener('click', function ()
                 div = document.createElement('div')
                 img = document.createElement('img');
                 ref = document.createElement('a');
+                
             img.src = results[i].image_url;
             div.innerHTML = results[i].title
             ref.href = results[i].url;
@@ -80,6 +108,15 @@ document.getElementById('pesquisar_anime').addEventListener('click', function ()
             container.appendChild(li);
         }
    })
+})
+
+/* Add anime */
+
+document.getElementById('buttonAnime').addEventListener('click', function () {
+    var nomeAnime = document.getElementById('animeNome')
+        imagemAnime = document.getElementById('animeImagem')
+
+    axios.post('')
 })
  /* Logout */ 
 
@@ -107,6 +144,7 @@ if (ifUsuarioLogado() === true ) {
     entrarButton.innerHTML ="Logout";
     cadastroButton.style.display = "none";
     header.style.display = "block";
+    formAnime.style.display = "block"
     imagem1.src = "https://i.pinimg.com/736x/1e/79/7a/1e797a74f2694fb573559db426aa4d78.jpg"
     imagem2.src = "https://ptanime.com/wp-content/uploads/2018/10/Roy-Mustang-FMA-anime-visual-destque-v1.jpg"
     imagem3.src = "https://thicc.mywaifulist.moe/waifus/16455/1f00d240901b02f561c04bef06695c6a46d7061372e37677281f2d17a4fdb1cd_thumb.jpeg"

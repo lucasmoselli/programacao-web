@@ -29,22 +29,31 @@
                 </li>
                 <li>
                     <button class="cadastro-button">Inscreve-se</button>
-                    <div>
+
                         <div  class="dialog2">
                             <ul class="dialogList">
-                                <li>Login<input type="text"></li>
-                                <li>Senha<input type="password"></li>
-                                <li>Primeiro nome<input type="primeironome"></li>
-                                <li>Ultimo nome<input type="ultimonome"></li>
+                                <li>Login<input type="text" id="cadastro-login" placeholder="Insire seu email"></li>
+                                <li class='display-senha'>Senha<input type="password" id="cadastro-senha" placeholder="Insira sua senha"></li>
                             </ul>
-                            <div class= "buttonDialog">
-                                <button>cadastrar usuário</button>
+                            <div>
+                                <button id="buttonCadastro" class= "buttonDialog">Cadastrar usuário</button>
                             </div>
+                            <span id="error2"></span>
                         </div>
                     </div>
                 </li>
             </ul>
         </nav>
+        <section class="addAnime">
+            <h1>Adicione seu anime no banco de dados aqui em baixo!!!</h1>
+            <ul class="animeList">
+                <li>Title <input type="text" placeholder="Digite o nome do anime" id="animeNome"></li>
+                <li>Img <input type="file" name="imagem" accept="*/image" id="animeImagem"></li>
+            </ul>
+            <div>
+                <button id="buttonAnime">Enviar</button>
+            </div>
+        </section>
         <header  class="header">
             <div class="header_texto"><b>Procure o seu anime aqui em baixo!!!</b></div>
             <section class="mobile_display">
