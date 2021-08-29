@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb+srv://lucas:12345@cluster0.x7lk0.mongodb.net/myFirstDatabase?retryWrites=true&w=majority')
+mongoose.connect('mongodb://localhost:27017/web?readPreference=primary&appname=MongoDB%20Compass&directConnection=true&ssl=false')
 mongoose.Promise = global.Promise;
 
 module.exports = mongoose

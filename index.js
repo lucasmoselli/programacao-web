@@ -53,7 +53,7 @@ document.getElementById('buttonCadastro').addEventListener('click', function () 
     error2.innerHTML = '';
 
     if (login.value.length >= 3 && senha.value.length >= 3) {
-        axios.post('https://localhost:3000/registrar', {email: login.value, password: senha.value})
+        axios.post('http://localhost:3000/registrar', {email: login.value, password: senha.value})
     }
 })
 /*login */
@@ -64,7 +64,7 @@ document.getElementById('login_button').addEventListener('click', function () {
     
     error.innerHTML = '';
     if (login.value.length >= 3 && senha.value.length >= 3) {
-        axios.post('https://localhost:3000/login', {email: login.value, password: senha.value})
+        axios.post('http://localhost:3000/login', {email: login.value, password: senha.value})
             .then((Response) => {
             console.log(Response)
             localStorage.setItem("Token", Response.data.token);
