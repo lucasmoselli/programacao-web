@@ -53,7 +53,14 @@ document.getElementById('buttonCadastro').addEventListener('click', function () 
     error2.innerHTML = '';
 
     if (login.value.length >= 3 && senha.value.length >= 3) {
-        axios.post('http://localhost:3000/registrar', {email: login.value, password: senha.value})
+        axios.post('http://localhost:3000/user/registrar', {email: login.value, password: senha.value})
+        .then((Response) => {
+            location.reload()
+        }, (error2) => {
+            error2.innerHTML = "Usuário já cadastrado"
+        })
+    } else {
+        error2.innerHTML = "Os campos devem conter no minimo 3 caracteres"
     }
 })
 /*login */
@@ -64,7 +71,7 @@ document.getElementById('login_button').addEventListener('click', function () {
     
     error.innerHTML = '';
     if (login.value.length >= 3 && senha.value.length >= 3) {
-        axios.post('http://localhost:3000/login', {email: login.value, password: senha.value})
+        axios.post('http://localhost:3000/user/login', {email: login.value, password: senha.value})
             .then((Response) => {
             console.log(Response)
             localStorage.setItem("Token", Response.data.token);
@@ -86,11 +93,34 @@ document.getElementById('login_button').addEventListener('click', function () {
 });
 
 /*procurar anime */
-
+/*
 document.getElementById('pesquisar_anime').addEventListener('click', function () {
     var container = document.getElementById('lista_de_anime')
     var query = document.getElementById('anime_input').value;
     axios.get('https://api.jikan.moe/v3/search/anime?q=' + query)
+    .then(function (res) {
+        var results = res.data.results;
+        for (var i = 0; i < results.length && i < 10; i++) {
+            var li= document.createElement('li');
+                div = document.createElement('div')
+                img = document.createElement('img');
+                ref = document.createElement('a');
+                
+            img.src = results[i].image_url;
+            div.innerHTML = results[i].title
+            ref.href = results[i].url;
+            li.appendChild(div)
+            li.appendChild(ref);
+            ref.appendChild(img);
+            container.appendChild(li);
+        }
+   })
+})
+*/
+document.getElementById('pesquisar_anime').addEventListener('click', function () {
+    var container = document.getElementById('lista_de_anime')
+    var query = document.getElementById('anime_input').value;
+    axios.get('http://localhost:3000/anime/buscar' + query)
     .then(function (res) {
         var results = res.data.results;
         for (var i = 0; i < results.length && i < 10; i++) {
@@ -116,7 +146,8 @@ document.getElementById('buttonAnime').addEventListener('click', function () {
     var nomeAnime = document.getElementById('animeNome')
         imagemAnime = document.getElementById('animeImagem')
 
-    axios.post('')
+    axios.post('http://localhost:3000/anime/criar/', {title: nomeAnime.value, img: imagemAnime.value})
+    location.reload()
 })
  /* Logout */ 
 

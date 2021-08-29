@@ -32,10 +32,7 @@ userController.registrar = async (req, res) => {
 
 userController.login = async (req, res) => {
     const { email, password } = req.body;
-    console.log(req.body);
-    console.log(email);
     const user = await User.findOne({ email : req.body.email }).select("+password");
-    console.log(user);
     if (!user)
         return res.status(400).send({ error: 'User not found' });
 

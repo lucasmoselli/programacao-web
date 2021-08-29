@@ -4,8 +4,9 @@ const Anime = require('../models/anime')
 const animeController = {};
 
 animeController.buscar = async (req, res) => {
+    const {title, img} = req.body
     try {
-        const listaAnime = await Anime.find().populate('Anime')
+        const listaAnime = await Anime.findOne({title: req.body.title})
 
         return res.send( {listaAnime} )
     } catch (err) {
